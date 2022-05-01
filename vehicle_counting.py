@@ -146,6 +146,21 @@ class Vehicle_counting:
             image = cv2.imread("./mot_outputs/First_frame/first_frame.jpg")
             """
             cv2.namedWindow("Set line window")
+            cv2.setMouseCallback("Set line window", self.Get_mouse,frame)
+
+            k = 0
+            while k != 112:
+                cv2.imshow("Set line window",frame)
+                k = cv2.waitKey(0)
+            cv2.destroyAllWindows()
+            
+    def Set_line(self, frame_id, frame):
+        if frame_id == 0 :
+            """
+            cv2.imwrite("./mot_outputs/First_frame/first_frame.jpg",frame)  # save frame as JPEG file
+            image = cv2.imread("./mot_outputs/First_frame/first_frame.jpg")
+            """
+            cv2.namedWindow("Set line window")
             cv2.setMouseCallback("Set line window", self.Get_mouse_Rectangle,frame)
 
             k = 0
@@ -153,7 +168,6 @@ class Vehicle_counting:
                 cv2.imshow("Set line window",frame)
                 k = cv2.waitKey(0)
             cv2.destroyAllWindows()
-
 
     # get midpoint of bbox
     def get_midpoint (self,tlwh):
