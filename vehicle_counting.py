@@ -154,7 +154,7 @@ class Vehicle_counting:
                 k = cv2.waitKey(0)
             cv2.destroyAllWindows()
             
-    def Set_line(self, frame_id, frame):
+    def Set_Rec(self, frame_id, frame):
         if frame_id == 0 :
             """
             cv2.imwrite("./mot_outputs/First_frame/first_frame.jpg",frame)  # save frame as JPEG file
